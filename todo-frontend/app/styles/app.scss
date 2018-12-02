@@ -1,0 +1,32 @@
+@import "bulma";
+
+#button {
+  width: 100%;
+}
+
+.todo-elem {
+  border: 1px dashed red;
+  margin: 10px;
+  padding: 4px;
+}
+
+.isDone.todo-elem {
+  color: grey;
+  text-decoration: line-through;
+  border-color: grey;
+  .button.is-info.is-outlined {
+    border-color: grey;
+    color: grey;
+    text-decoration: none;
+  }
+}
+
+.check-todo {
+  margin-left: 2px;
+  margin-right: 4px;
+}
+
+.delete {
+  margin-left: 4px;
+  margin-right: 2px;
+}

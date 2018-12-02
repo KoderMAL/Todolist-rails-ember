@@ -1,0 +1,21 @@
+<div id="todo block">
+  {{#if isEditing}}
+    <div class="field is-grouped is-grouped-centered">
+      {{input type="text" class="isEdit input is-small" name="todo" value=model.title enter=(action 'updateTodo' model)}}
+      <span class="button is-small is-info" {{action "updateTodo" model}}>Update</span>
+      <span class="is-info is-medium delete" {{action "cancelEdit" model}}></span>
+    </div>
+  {{else}}
+    <div class="field is-grouped is-grouped-centered">
+      <span class="check-todo">
+        {{input type="checkbox" checked=model.done click=(action 'toggleTodo' model)}}
+        <label for="checkbox"></label>
+      </span>
+      <div class="control is-expanded">
+        {{model.title}}
+      </div>
+      <span class="button is-outlined is-primary is-small right edit" {{action 'editTodo' }}>Edit</span>
+      <span class="is-medium delete" {{action "deleteTodo" model }}></span>
+    </div>
+  {{/if}}
+</div>

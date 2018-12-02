@@ -1,0 +1,22 @@
+<section id="hero">
+  <section class="hero is-danger">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered">Todo List</h1>
+      </div>
+    </div>
+  </section>
+  <section id="list">
+    <div id="hero-body">
+      {{input class="input" name="todo" value=todo placeholder="Type a new task" autofocus="true"}}
+      <button class="button is-primary is-outlined" id="button"  {{action "addTodo"}}>Add new Task !</button>
+      <ul class="ulist">
+        {{#each model as |todo|}}
+          <li class="todo-elem {{if todo.done "isDone"}}">
+            {{todo-list model=todo}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+</section>
